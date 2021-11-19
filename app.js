@@ -28,8 +28,8 @@ app.post("/user/create", (req, res)=>{
    res.send("usuario creado");
 });
 
-app.delete("/user/delete/:nombre", (req,res)=>{
-    users = users.filter(el => el!= req.params.nombre)
+app.delete("/user/delete", (req,res)=>{
+    users = users.filter(el => el!= req.body.nombre)
     res.send("usuario borrado");
 })
 
@@ -41,3 +41,5 @@ app.put("/user/change/:nombre/:nombre2",(req,res)=>{
 app.listen(port, ()=>{
     log("start server");
 });
+
+
